@@ -39,4 +39,15 @@ function appendSkills(pane, json) {
         appendPresence(panes.presence, response.presence);
         appendSkills(panes.skills, response.skills);
     });
+
+    var tabs = document.getElementsByClassName('tab-label-content');
+
+    for(var i = 0; i < tabs.length; i += 1) {
+        tabs[i].addEventListener('keydown', function(e) {
+
+            if(e.keyCode === 13) {
+                this.firstElementChild.click()
+            }
+        });
+    }
 }());

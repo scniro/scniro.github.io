@@ -5,26 +5,24 @@ function get(url, cb) {
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState === 4 && xmlhttp.status === 200)
             cb(JSON.parse(xmlhttp.responseText || '{}'));
-    }
+    };
 
     xmlhttp.open('GET', url, true);
     xmlhttp.send();
 }
 
 function appendAbout(pane, json) {
-    pane.innerHTML = '<p>' + json + '</p>'
+    pane.innerHTML = '<p>' + json + '</p>';
 }
 
 function appendPresence(pane, json) {
-    for (var i = 0; i < json.length; i += 1) {
-        pane.innerHTML += '<a href="' + json[i].url + '" target="_blank" class="presence-link"><img src="img/' + json[i].path + '.png" alt="' + json[i].path + '"/>'
-    }
+    for (var i = 0; i < json.length; i += 1)
+        pane.innerHTML += '<a href="' + json[i].url + '" target="_blank" class="presence-link"><img src="img/' + json[i].path + '.png" alt="' + json[i].path + '"/>';
 }
 
 function appendSkills(pane, json) {
-    for (var i = 0; i < json.length; i += 1) {
-        pane.innerHTML += '<span class="skill">' + json[i] + '</span>'
-    }
+    for (var i = 0; i < json.length; i += 1)
+        pane.innerHTML += '<span class="skill">' + json[i] + '</span>';
 }
 
 (function () {
@@ -33,7 +31,7 @@ function appendSkills(pane, json) {
         about: document.getElementsByClassName('about')[0],
         presence: document.getElementsByClassName('presence')[0],
         skills: document.getElementsByClassName('skills')[0]
-    }
+    };
 
     get('http://localhost:3005/api', function (response) {
         appendAbout(panes.about, response.about);
@@ -58,16 +56,16 @@ function appendSkills(pane, json) {
 
         tabs[i].addEventListener('blur', function () {
             for (var i = 0; i < tabs.length; i += 1)
-                tabs[i].firstElementChild.style.border = 0
+                tabs[i].firstElementChild.style.border = 0;
         });
 
         tabs[i].addEventListener('click', function () {
             for (var i = 0; i < tabs.length; i += 1) {
-                tabs[i].firstElementChild.style.border = 0
+                tabs[i].firstElementChild.style.border = 0;
                 tabs[i].setAttribute('aria-selected', 'false');
             }
 
-            this.setAttribute('aria-selected', 'true')
+            this.setAttribute('aria-selected', 'true');
         });
 
         tabs[i].addEventListener('keyup', function (e) {
@@ -76,9 +74,9 @@ function appendSkills(pane, json) {
 
             if (e.keyCode === 9) {
                 for (var o = 0; o < tabs.length; o += 1)
-                    tabs[o].firstElementChild.style.border = 0
+                    tabs[o].firstElementChild.style.border = 0;
 
-                this.firstElementChild.style.border = e.target.classList.contains('presence-link') ? 0 : 'dotted 1px white'
+                this.firstElementChild.style.border = e.target.classList.contains('presence-link') ? 0 : 'dotted 1px white';
             }
         });
     }

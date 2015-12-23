@@ -8,31 +8,31 @@
     <link rel="stylesheet" href="css/style.min.css"/>
 </head>
 <body>
-<h1>scniro<a href="mailto:scniro@outlook.com" target="_top" class="mail">&#9993;</a></h1>
+<h1>scniro<a href="mailto:scniro@outlook.com" target="_top" class="mail"><span aria-hidden="true">&#9993;</span><span class="sr-only">email</span></a></h1>
 
-<div class="tab-wrap">
+<div class="tab-wrap" role="tablist">
 
-    <input type="radio" name="tabs" id="tab1" tabindex="-1">
-    <div class="tab-label-content" tabindex="0">
-        <label for="tab1" tabindex="0">about</label>
-        <div class="tab-content about"></div>
+    <input type="radio" name="tabs" id="tab1" tabindex="-1" checked>
+    <div class="tab-label-content" tabindex="0" role="tab" aria-controls="panel-about" aria-selected="true">
+        <label for="tab1">about</label>
+        <div id="panel-about" class="tab-content about" role="tabpanel"></div>
     </div>
 
     <input type="radio" name="tabs" id="tab2" tabindex="-1">
-    <div class="tab-label-content" tabindex="0">
+    <div class="tab-label-content" tabindex="0" role="tab" aria-controls="panel-presence" aria-selected="false">
         <label for="tab2">presence</label>
-        <div class="tab-content presence"></div>
+        <div id="panel-presence" class="tab-content presence" role="tabpanel"></div>
     </div>
-
     <input type="radio" name="tabs" id="tab3" tabindex="-1">
-    <div class="tab-label-content" tabindex="0">
+
+    <div class="tab-label-content" tabindex="0" role="tab" aria-controls="panel-skills" aria-selected="false">
         <label for="tab3">skills</label>
-        <div class="tab-content skills"></div>
+        <div id="panel-skills" class="tab-content skills" role="tabpanel"></div>
     </div>
 
     <div class="slide"></div>
 </div>
 
-<script src="js/main.js"></script>
+<script src="js/main.min.js"></script>
 </body>
 </html>

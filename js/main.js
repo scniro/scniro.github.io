@@ -1,3 +1,5 @@
+var api = document.location.hostname === 'localhost' ? 'http://localhost:3005/api' : 'http://scniro.azurewebsites.net/api';
+
 function get(url, cb) {
 
     var xmlhttp = new XMLHttpRequest();
@@ -33,7 +35,7 @@ function appendSkills(pane, json) {
         skills: document.getElementsByClassName('skills')[0]
     };
 
-    get('http://localhost:3005/api', function (response) {
+    get(api, function (response) {
         appendAbout(panes.about, response.about);
         appendPresence(panes.presence, response.presence);
         appendSkills(panes.skills, response.skills);

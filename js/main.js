@@ -19,7 +19,7 @@ function appendAbout(pane, json) {
 
 function appendPresence(pane, json) {
     for (var i = 0; i < json.length; i += 1)
-        pane.innerHTML += '<a href="' + json[i].url + '" target="_blank" class="presence-link"><img src="img/' + json[i].path + '.png" alt="' + json[i].path + '"/>';
+        pane.innerHTML += '<a href="' + json[i].url + '" class="presence-link" target="_blank"><img src="' + json[i].resource + '" alt="' + json[i].alt + '"/>';
 }
 
 function appendSkills(pane, json) {

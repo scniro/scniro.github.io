@@ -1,0 +1,138 @@
+$header: #AFAFAF;
+$accent: #ffeb3b;
+$complement: #C7E909;
+$text: #525252;
+$num-of-tabs: 3;
+
+@mixin tabs {
+  @for $i from 1 through $num-of-tabs {
+    &:nth-of-type(#{$i}) {
+      &:checked {
+        ~ .slide {
+          left: calc((100% / #{$num-of-tabs}) * #{$i - 1});
+        }
+      }
+    }
+  }
+}
+
+html, body {
+  width: 100%;
+  font-family: Roboto, sans-serif;
+
+  a, [tabindex="0"] {
+    outline: none;
+  }
+
+  h1 {
+    font-size: 26px;
+    background: $header;
+    color: white;
+    padding: 40px 0 100px 20%;
+    margin-bottom: 50px;
+    cursor: default;
+    user-select: none;
+
+    a.mail {
+      text-decoration: none;
+      color: $text;
+      position: relative;
+      top: 2px;
+      box-sizing: border-box;
+
+      &:hover {
+        color: $accent !important;
+      }
+    }
+  }
+
+  nav {
+    width: 50%;
+    margin-left: 20%;
+    position: relative;
+    display: flex;
+    top: -106px;
+
+    input[type="radio"][name="tabs"] {
+      position: absolute;
+      z-index: -1;
+      &:checked {
+        + .tab-label-content {
+          label {
+            color: white;
+          }
+          .tab-content {
+            display: block;
+          }
+        }
+      }
+      @include tabs;
+      &:first-of-type {
+        &:checked {
+          ~ .slide {
+            left: 0;
+          }
+        }
+      }
+    }
+
+    label {
+      cursor: pointer;
+      color: $text;
+      background-color: $header;
+      box-sizing: border-box;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 56px;
+      transition: color 0.2s ease;
+      width: 100%;
+      user-select: none;
+    }
+
+    .tab-label-content {
+      width: 100%;
+
+      .tab-content {
+        position: absolute;
+        top: 100px;
+        left: 16px;
+        line-height: 130%;
+        display: none;
+      }
+    }
+
+    .slide {
+      background: $accent;
+      width: calc(100% / #{$num-of-tabs});
+      height: 4px;
+      position: absolute;
+      left: 0;
+      top: calc(100% - 4px);
+      transition: left 0.3s ease-out;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    h1 {
+      padding: 40px 0 90px 10%;
+    }
+    nav {
+      width: 80%;
+      margin-left: 10%;
+      top: -106px;
+    }
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

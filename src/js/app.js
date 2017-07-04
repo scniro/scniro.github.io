@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
     tenant: 'scniro.github.io',
     pattern: '%%',
     target: document.body,
-    override: 'http://localhost:4000' // remove by EOD
+    // override: 'http://localhost:4000'
   }).then(function(worker) {
     worker.transform();
   });

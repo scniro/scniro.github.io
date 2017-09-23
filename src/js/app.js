@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  window.kyvl.init({
+  window.frankenstein.init({
     tenant: 'scniro.github.io',
     pattern: '%%',
     target: document.body,

@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
     pattern: '%%',
     target: document.body,
     // override: 'http://localhost:4000'
-  }).then(function(worker) {
+  }).then(function (worker) {
     worker.transform();
   });
 });

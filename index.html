@@ -1,47 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>scniro.github.io</title>
+  <meta charset="UTF-8">
+  <title>scniro.github.io</title>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
-    <link rel="stylesheet" href="dist/app.min.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
+  <link rel="stylesheet" href="dist/app.min.css"/>
 </head>
 <body>
 <h1>
-    <span><!-- %%title%% --></span>
-    <a href="mailto:scniro@outlook.com" target="_top" class="mail">
-        <span aria-hidden="true">&#9993;</span>
-        <span class="sr-only"><!-- %%sr.email%% --></span>
-    </a>
+  <span><!-- %%title%% --></span>
+  <a href="mailto:scniro@outlook.com" target="_top" class="mail">
+    <span aria-hidden="true">&#9993;</span>
+    <span class="sr-only"><!-- %%sr.email%% --></span>
+  </a>
 </h1>
 
 <nav role="tablist">
-    <input type="radio" name="tabs" id="tab1" tabindex="-1" checked>
-    <div class="tab-label-content" tabindex="0" role="tab" aria-controls="panel-about" aria-selected="true">
-        <label for="tab1"><!-- %%nav.a%% --></label>
-        <div id="panel-about" class="tab-content about" role="tabpanel">
-            <!-- %%content.about%% -->
-        </div>
+  <input type="radio" name="tabs" id="tab1" tabindex="-1" checked>
+  <div class="tab-label-content" tabindex="0" role="tab" aria-controls="panel-about" aria-selected="true">
+    <label for="tab1"><!-- %%nav.a%% --></label>
+    <div id="panel-about" class="tab-content about" role="tabpanel">
+      <!-- %%content.presence%% -->
     </div>
+  </div>
 
-    <input type="radio" name="tabs" id="tab2" tabindex="-1">
-    <div class="tab-label-content" tabindex="0" role="tab" aria-controls="panel-presence" aria-selected="false">
-        <label for="tab2"><!-- %%nav.b%% --></label>
-        <div id="panel-presence" class="tab-content presence" role="tabpanel">
-            <!-- %%content.presence%% -->
-        </div>
+  <input type="radio" name="tabs" id="tab2" tabindex="-1">
+  <div class="tab-label-content" tabindex="0" role="tab" aria-controls="panel-presence" aria-selected="false">
+    <label for="tab2"><!-- %%nav.b%% --></label>
+    <div id="panel-presence" class="tab-content presence" role="tabpanel">
+      <!-- %%content.stuff%% -->
     </div>
-    <input type="radio" name="tabs" id="tab3" tabindex="-1">
+  </div>
 
-    <div class="tab-label-content" tabindex="0" role="tab" aria-controls="panel-skills" aria-selected="false">
-        <label for="tab3"><!-- %%nav.c%% --></label>
-        <div id="panel-skills" class="tab-content skills" role="tabpanel">
-            <!-- %%content.skills%% -->
-        </div>
-    </div>
-
-    <div class="slide"></div>
+  <div class="slide"></div>
 </nav>
 
 <script src="dist/app.min.js"></script>

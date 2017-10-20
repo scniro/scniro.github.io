@@ -2,7 +2,7 @@ $header: #AFAFAF;
 $accent: #ffeb3b;
 $complement: #C7E909;
 $text: #525252;
-$num-of-tabs: 3;
+$num-of-tabs: 2;
 
 @mixin tabs {
   @for $i from 1 through $num-of-tabs {
